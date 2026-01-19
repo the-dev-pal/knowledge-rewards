@@ -1,6 +1,5 @@
-package StreamAPIs;
+package Java.StreamAPIs;
 
-import java.net.SocketOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

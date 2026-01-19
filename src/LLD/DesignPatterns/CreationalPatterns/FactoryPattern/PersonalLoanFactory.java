@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalPatterns.FactoryPattern;
+package LLD.DesignPatterns.CreationalPatterns.FactoryPattern;
 
 // Personal Loan Factory
 public class PersonalLoanFactory extends LoanFactory{

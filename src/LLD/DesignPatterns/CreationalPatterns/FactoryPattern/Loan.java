@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalPatterns.FactoryPattern;
+package LLD.DesignPatterns.CreationalPatterns.FactoryPattern;
 
 // Product Interface
 public interface Loan {

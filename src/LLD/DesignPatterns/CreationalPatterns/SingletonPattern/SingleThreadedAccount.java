@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalPatterns.SingletonPattern;
+package LLD.DesignPatterns.CreationalPatterns.SingletonPattern;
 
 import java.time.LocalDateTime;
 

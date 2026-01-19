@@ -1,10 +1,10 @@
-package DesignPatterns.CreationalPatterns.FactoryPattern;
+package LLD.DesignPatterns.CreationalPatterns.FactoryPattern;
 
-// Vehicle Loan Product
-public class VehicleLoan implements Loan{
+// Personal Loan Product
+public class PersonalLoan implements Loan{
     @Override
     public double calculateInterestAmount(Account account) {
-        return 5678.12;
+        return 1234.56;
     }
 
     @Override

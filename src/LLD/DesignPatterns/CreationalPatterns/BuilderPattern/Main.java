@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalPatterns.BuilderPattern;
+package LLD.DesignPatterns.CreationalPatterns.BuilderPattern;
 
 public class Main {
     static void main(String[] args) {
