@@ -1,12 +1,16 @@
-package Java.MultiThreading.AdderSubstractor;
+package Java.MultiThreading.AdderSubtractorMuTex;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Client {
 
     public static void main(String[] args) throws InterruptedException {
 
         Count count = new Count();
-        Adder adder = new Adder(count);
-        Substractor substractor = new Substractor(count);
+        Lock lock = new ReentrantLock();
+        Adder adder = new Adder(count, lock);
+        Substractor substractor = new Substractor(count, lock);
 
         Thread adderThread = new Thread(adder);
         Thread substactorThread = new Thread(substractor);
@@ -17,9 +21,6 @@ public class Client {
         substactorThread.join();
 
         System.out.println(count.value);
-
-        // As the Count object is shared for both threads, we can't predict the result.
-        // This means there is a synchronization issue in between the threads.
 
     }
 

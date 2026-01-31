@@ -1,4 +1,4 @@
-package Java.MultiThreading.AdderSubstractor;
+package Java.MultiThreading.AdderSubtractorAtomicDS;
 
 public class Substractor implements Runnable{
 
@@ -11,7 +11,7 @@ public class Substractor implements Runnable{
     @Override
     public void run() {
         for (int i=1;i<10000;i++){
-            count.value -= i;
+            count.value.decrementAndGet();
         }
     }
 }

@@ -1,4 +1,4 @@
-package Java.MultiThreading.AdderSubstractor;
+package Java.MultiThreading.AdderSubtractor;
 
 public class Adder implements Runnable{
 
