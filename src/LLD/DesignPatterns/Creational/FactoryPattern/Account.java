@@ -1,4 +1,4 @@
-package LLD.DesignPatterns.CreationalPatterns.FactoryPattern;
+package LLD.DesignPatterns.Creational.FactoryPattern;
 
 public class Account {
     private String name;
