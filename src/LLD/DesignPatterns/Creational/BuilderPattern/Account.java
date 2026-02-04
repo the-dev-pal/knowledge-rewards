@@ -3,75 +3,37 @@ package LLD.DesignPatterns.Creational.BuilderPattern;
 import java.time.LocalDateTime;
 
 public class Account {
-    private String accountNumber;
-    private String name;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private boolean isActive;
 
+    // required fields must be final
+    private final long accountNumber;
+    private final String name;
+    // optional fields
+    private String email;
+
+    // constructor must be private, as this shouls be accessible from outside of this class
     private Account(AccountBuilder accountBuilder){
-        this.accountNumber = accountBuilder.getAccountNumber();
-        this.name = accountBuilder.getName();
-        this.createdAt = accountBuilder.getCreatedAt();
-        this.updatedAt = accountBuilder.getUpdatedAt();
-        this.isActive = accountBuilder.isActive();
-    }
-
-    public static AccountBuilder getAccountBuilder(){
-        return new AccountBuilder();
+        this.accountNumber = accountBuilder.accountNumber;
+        this.name = accountBuilder.name;
+        this.email = accountBuilder.email;
     }
 
     public static class AccountBuilder{
-        private String accountNumber;
-        private String name;
-        private LocalDateTime createdAt;
-        private LocalDateTime updatedAt;
-        private boolean isActive;
+        // required fields
+        private final long accountNumber;
+        private final String name;
 
-        // Getters
-        public String getAccountNumber() {
-            return accountNumber;
-        }
+        // optional fields
+        private String email;
 
-        public String getName() {
-            return name;
-        }
-
-        public LocalDateTime getCreatedAt() {
-            return createdAt;
-        }
-
-        public LocalDateTime getUpdatedAt() {
-            return updatedAt;
-        }
-
-        public boolean isActive() {
-            return isActive;
-        }
-
-        // Setters
-        public AccountBuilder setAccountNumber(String accountNumber) {
+        // Constructor for required fields
+        public AccountBuilder(long accountNumber, String name) {
             this.accountNumber = accountNumber;
-            return this;
-        }
-
-        public AccountBuilder setName(String name) {
             this.name = name;
-            return this;
         }
 
-        public AccountBuilder setCreatedAt(LocalDateTime createdAt) {
-            this.createdAt = createdAt;
-            return this;
-        }
-
-        public AccountBuilder setUpdatedAt(LocalDateTime updatedAt) {
-            this.updatedAt = updatedAt;
-            return this;
-        }
-
-        public AccountBuilder setActive(boolean active) {
-            isActive = active;
+        // For optional fields
+        public AccountBuilder email(String email) {
+            this.email = email;
             return this;
         }
 
@@ -83,11 +45,9 @@ public class Account {
     @Override
     public String toString() {
         return "Account{" +
-                "accountNumber='" + accountNumber + '\'' +
+                "accountNumber=" + accountNumber +
                 ", name='" + name + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", isActive=" + isActive +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

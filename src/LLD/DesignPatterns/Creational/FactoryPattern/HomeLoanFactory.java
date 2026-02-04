@@ -1,8 +1,8 @@
 package LLD.DesignPatterns.Creational.FactoryPattern;
 
-public class PersonalLoanFactory implements LoanFactory{
+public class HomeLoanFactory implements LoanFactory{
     @Override
     public Loan getLoan() {
-        return new PersonaLoan();
+        return new HomeLoan();
     }
 }
