@@ -18,12 +18,14 @@ public class ImmutableClient {
 
         ImmutableClass immutableClass = new ImmutableClass("Ram", 23, address, phoneNumbers, metaData);
 
+        System.out.println("Before Modifying...");
         System.out.println(immutableClass);
 
         phoneNumbers.add("3676384563847");
         metaData.put("987", "tvs");
         address.setCity("abc");
 
+        System.out.println("After Modifying...");
         System.out.println(immutableClass);
 
     }

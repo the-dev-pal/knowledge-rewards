@@ -1,9 +1,6 @@
 package Java;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // Class must declare as final
 public final class ImmutableClass {
@@ -22,8 +19,8 @@ public final class ImmutableClass {
         this.age = age;
         // Creating a deep copy of Address, List, and Map to ensure immutability
         this.address = new Address(address.getCity(), address.getStreet(), address.getZipcode());
-        this.phoneNumbers = new ArrayList<>(phoneNumbers);
-        this.metaData = new HashMap<>(metaData);
+        this.phoneNumbers = Collections.unmodifiableList(phoneNumbers);
+        this.metaData = Collections.unmodifiableMap(metaData);
     }
 
     // Only Getters, do not declare setters
@@ -43,7 +40,8 @@ public final class ImmutableClass {
             original one. So that, if the user tries to modify, no impact o the original
             data.
         */
-        return new ArrayList<>(phoneNumbers);
+        return phoneNumbers;
+        //return new ArrayList<>(phoneNumbers);
     }
     public Map<String, String> getMetaData() {
         /*
@@ -51,7 +49,8 @@ public final class ImmutableClass {
             original one. So that, if the user tries to modify, no impact o the original
             data.
         */
-        return new HashMap<>(metaData);
+        return metaData;
+        //return new HashMap<>(metaData);
     }
 
     @Override

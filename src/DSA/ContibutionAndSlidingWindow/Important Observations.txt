@@ -1,0 +1,7 @@
+-> Sum of some random sub-arrays - PreFix Sum Technique
+-> Sum of all sub-arrays - CarryForward Technique
+-> Sum of all sub-array sums - Contribution Technique
+-> Fixed size window - Sliding Window Technique
+
+-> Number of sub-arrays in an array - N(N+1)/2
+-> Number of sub-arrays containing array[i] - (i+1)*(N-i)
